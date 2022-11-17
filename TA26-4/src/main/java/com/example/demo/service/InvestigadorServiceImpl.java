@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.dao.IInvestigadorDAO;
 import com.example.demo.dto.Investigador;
@@ -38,6 +39,7 @@ public class InvestigadorServiceImpl implements IInvestigadorService{
 	}
 
 	@Override
+	@Transactional
 	public void eliminarInvestigador(String dni) {
 		iInvestigadorDAO.deleteByDni(dni);
 		
